@@ -1,26 +1,22 @@
-# WISER Quantum Portfolio Optimization
+# Project 2: Quantum for Portfolio Optimization
 
-## Project Name
-**Project 2: Quantum for Portfolio Optimization**
+## Team 
+Team Name: NaiveQuantum
 
-## Team Name
-**NaiveQuantum**
-
-## Team Members
-
+Members:
 | Name | WISER Enrollment ID |
 |------|-------------------|
 | La Wun Nannda | gst-9Znx386rMl8rJMQ |
 
 ## Project Summary
 
-This project demonstrates a basic implementation of quantum computing techniques to solve portfolio optimization problems in fixed income markets. It uses a straightforward Variational Quantum Algorithm (VQA) approach, specifically the Variational Quantum Eigensolver (VQE) with Conditional Value-at-Risk (CVaR) optimization, to address the task of selecting optimal bond portfolios from a universe of 31 fixed income securities.
+This project demonstrates a basic implementation of quantum computing techniques to solve portfolio optimization problems. It uses a straightforward Variational Quantum Algorithm (VQA) approach, specifically the Variational Quantum Eigensolver (VQE) with Conditional Value-at-Risk (CVaR) optimization, to address the task of selecting optimal bond portfolios from a universe of 31 fixed income securities.
 
 The core problem involves minimizing the difference between a portfolio's characteristics and target values while satisfying various constraints. Traditional classical optimization methods, such as linear programming with CPLEX or Gurobi, face computational challenges as the problem size scales. Quantum computing offers a promising alternative through its inherent ability to explore large solution spaces efficiently using quantum superposition and entanglement.
 
-Our implementation utilizes a basic TwoLocal ansatz with full entanglement patterns, designed to capture correlations between different bonds in the portfolio. The choice of full entanglement is motivated by recent advances in quantum hardware architecture. Moreover, tunable couplers in the Ankaa architecture can facilitate dynamic control over qubit interactions. This advancement eases the implementation of fully entangled circuits, such as the two-local full entanglement ansatz, making them more practical on real quantum hardware. The algorithm employs CVaR optimization, which focuses on the worst-case scenarios rather than average performance, making it suitable for risk-sensitive financial applications. The CVaR approach optimizes the conditional value-at-risk objective, providing a different perspective compared to traditional mean-variance optimization.
+My implementation utilizes a basic TwoLocal ansatz with full entanglement patterns, designed to capture correlations between different bonds in the portfolio. The choice of full entanglement is motivated by recent advances in quantum hardware architecture such as tunable couplers in the Ankaa architecture. This advancement eases the implementation of fully entangled circuits, such as the two-local full entanglement ansatz, making them more practical on real quantum hardware. The algorithm employs CVaR optimization, which focuses on the worst-case scenarios rather than average performance, making it suitable for risk-sensitive financial applications. The CVaR approach optimizes the conditional value-at-risk objective, providing a different perspective compared to traditional mean-variance optimization.
 
-The project demonstrates a working quantum portfolio optimization solution. Our results show convergence behavior with the algorithm completing in 931 iterations, and the solution selects 24 out of 31 bonds (77.4% selection rate). While these results are promising, it's important to note that this represents a basic, unoptimized implementation rather than a fully optimized solution.
+My results show convergence behavior with the algorithm completing in 931 iterations, and the solution selects 24 out of 31 bonds (77.4% selection rate). While these results are promising, it's important to note that this represents a basic, unoptimized implementation rather than a fully optimized solution.
 
 Key technical aspects include the implementation of a QUBO (Quadratic Unconstrained Binary Optimization) formulation that transforms the original linear programming problem into a format suitable for quantum variational algorithms. The conversion process involves constraint handling and objective function reformulation to ensure the quantum algorithm can explore the solution space effectively.
 
@@ -43,5 +39,5 @@ Future work would ideally focus on systematic comparison of different quantum ci
 - **Quantum Framework:** Qiskit
 - **Optimization:** Variational Quantum Eigensolver (VQE)
 - **Risk Measure:** Conditional Value-at-Risk (CVaR)
-- **Backend:** AerSimulator (quantum simulation)
+- **Backend:** AerSimulator
 - **Problem Formulation:** QUBO transformation
